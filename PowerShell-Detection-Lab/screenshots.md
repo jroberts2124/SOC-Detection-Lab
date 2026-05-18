@@ -1,20 +1,9 @@
 
-<img width="975" height="102" alt="image" src="https://github.com/user-attachments/assets/e87160e6-b2fe-453b-84ef-e97ae615a439" />
+<img width="975" height="755" alt="image" src="https://github.com/user-attachments/assets/fd2920a3-342c-4a94-9e9a-b672719c905d" />
 
-<img width="975" height="301" alt="image" src="https://github.com/user-attachments/assets/f2bafc9e-801c-40ac-9de4-ce513f62876c" />
-
-<img width="975" height="397" alt="image" src="https://github.com/user-attachments/assets/fbb6b03b-dfdc-4f31-8cac-e727c4a430a3" />
-
-<img width="975" height="294" alt="image" src="https://github.com/user-attachments/assets/34c3b9bc-dc1b-42a7-ae3e-cdbac6361bcf" />
-
-<img width="975" height="669" alt="image" src="https://github.com/user-attachments/assets/6f4ca696-9660-40ba-96ef-d7bca8b5434c" />
-
-<img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/585e2249-1cd2-4fe9-8845-d2a82458b43d" />
-
-<img width="841" height="400" alt="image" src="https://github.com/user-attachments/assets/d4042482-96f3-4495-8031-ceb821f948d7" />
+This screenshot shows multiple attack simulations from Invoke-AtomicRedTeam executing MITRE ATT&CK technique `T1059.003`, which focuses on Windows Command Shell abuse. The tests simulate attacker behaviors such as creating and running batch scripts, executing suspicious `cmd.exe` commands, launching programs like `calc.exe`, and mimicking ransomware-related activity to generate realistic security telemetry. These actions produce logs that can be collected by Sysmon and analyzed in Splunk Enterprise to build and test SOC detection rules.
 
 
-<img width="1273" height="418" alt="image" src="https://github.com/user-attachments/assets/82e1107f-d46c-42ae-8fbb-3f393c2b8fc2" />
 
 
 
