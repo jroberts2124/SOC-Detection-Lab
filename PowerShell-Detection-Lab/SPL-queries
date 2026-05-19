@@ -1,5 +1,7 @@
-This Splunk Enterprise query searches Sysmon process creation logs and extracts the executable name (`Image`) and full command line (`CommandLine`) from the raw XML event data. 
-It then filters for suspicious activity involving PowerShell or scheduled task creation (`schtasks`) and displays the timestamp, process name, and executed command in a readable table format.
+This Splunk Enterprise query searches Sysmon Operational logs and extracts the process executable name (`Image`) and executed command (`CommandLine`) from the raw XML event data. It then filters the 
+results to show only events involving `powershell.exe`, which is commonly monitored because attackers frequently abuse PowerShell for malicious activity. Finally, the query displays the event timestamp, process
+path, and command line in a readable table to help analysts investigate suspicious PowerShell executions.
+
 
 
 index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
