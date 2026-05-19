@@ -13,8 +13,12 @@ This screenshot shows a custom Splunk Enterprise query detecting PowerShell-rela
 
 <img width="1065" height="305" alt="image" src="https://github.com/user-attachments/assets/0b5c1f4b-8c06-4bf9-baa1-2e0b63526b18" />
 
+Image results
+
 
 <img width="1033" height="334" alt="image" src="https://github.com/user-attachments/assets/cbb4dbfd-5724-4612-bd37-afffb3c4452a" />
+
+Command line results
 
 
 
