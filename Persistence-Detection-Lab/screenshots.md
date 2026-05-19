@@ -6,5 +6,11 @@ This screenshot shows a simulated persistence attack being executed through Invo
 
 This screenshot shows a custom Splunk Enterprise query detecting suspicious scheduled task activity from Sysmon logs. The query extracts command-line data from Sysmon events and filters for `schtasks` commands, which are commonly used by attackers to establish persistence on compromised systems. The results reveal the creation and execution of a scheduled task named `UpdaterTask` that launches hidden PowerShell commands with `SYSTEM` privileges, demonstrating a simulated persistence attack successfully detected in Splunk.
 
+<img width="975" height="397" alt="image" src="https://github.com/user-attachments/assets/9e11d845-2183-4e73-a6b9-214a1e66e5a5" />
+
+
+This screenshot shows a detailed Sysmon event captured in Splunk Enterprise after a scheduled task was executed on the endpoint. The event logs the command `schtasks.exe /run /tn UpdaterTask`, confirming that the persistence task named `UpdaterTask` was manually triggered on the system. The log also shows that the parent process was `powershell.exe`, demonstrating how PowerShell was used to execute a scheduled task persistence technique commonly associated with attacker behavior.
+
+
 
 
