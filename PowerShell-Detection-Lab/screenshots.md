@@ -7,6 +7,10 @@ This screenshot shows multiple attack simulations from Invoke-AtomicRedTeam exec
 <img width="975" height="450" alt="image" src="https://github.com/user-attachments/assets/721d49c3-f7da-4f0d-8d38-850ce33336c9" />
 
 
+This screenshot shows a custom Splunk Enterprise query detecting PowerShell-related activity from Sysmon logs. The query extracts the executable path (`Image`) and command-line arguments (`CommandLine`) from raw Sysmon events and filters for processes containing `powershell`, allowing suspicious PowerShell executions to be identified. The results confirm that PowerShell activity was successfully generated on the endpoint, collected through the Splunk Universal Forwarder, indexed in Splunk, and detected through your custom SPL detection rule.
+
+
+
 
 
 
