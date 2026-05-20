@@ -1,0 +1,10 @@
+(index=main EventCode=4625)
+OR
+(index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational")
+| rex field=_raw "Name='Image'>(?<Image>[^<]+)"
+| table _time EventCode Account_Name Image
+
+index=main EventCode=4625
+| bucket _time span=5m
+| stats count by _time Account_Name Source_Network_Address
+| where count >= 10
