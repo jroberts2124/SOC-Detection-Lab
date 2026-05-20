@@ -6,8 +6,16 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | search Image="*powershell.exe"
 | table _time Image CommandLine
 
+Detect Suspicious Backup Deletion Commands
 
 index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
 | search CommandLine="*vssadmin*" OR CommandLine="*delete shadows*"
+| table _time CommandLine
+
+Detect Ransom Note Activity
+
+index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
+| search CommandLine="*READ_ME.txt*"
 | table _time CommandLine
