@@ -114,13 +114,6 @@ Observed:
 - PowerShell execution telemetry
 - authentication event spikes within short timeframes
 
-Example output:
-
-```text
-EventCode = 4625
-Account_Name = FakeUser
-Source_Network_Address = 127.0.0.1
-```
 
 ---
 
@@ -162,19 +155,4 @@ Detection Queries
 ↓  
 Threat Analysis
 
----
 
-# Screenshots to Include
-
-- Failed login simulation execution
-- Atomic Red Team / PowerShell activity
-- Splunk brute-force detection query
-- Detection results showing Event ID 4625
-- Sysmon process creation telemetry
-- SPL detection results dashboard
-
----
-
-# Cleanup
-
-No permanent system modifications were made during this lab simulation.
