@@ -7,4 +7,4 @@ OR
 index=main EventCode=4625
 | bucket _time span=5m
 | stats count by _time Account_Name Source_Network_Address
-| where count >= 10
+| where count >= 5
