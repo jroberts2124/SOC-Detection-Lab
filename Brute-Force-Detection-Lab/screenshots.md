@@ -5,3 +5,6 @@ This screenshot shows Invoke-AtomicRedTeam executing MITRE ATT&CK brute-force at
 
 <img width="1237" height="493" alt="image" src="https://github.com/user-attachments/assets/cf390668-a006-40f8-815c-e0a626651b08" />
 
+This screenshot shows a combined Splunk Enterprise query searching for both failed logon events (`EventCode=4625`) and Sysmon process creation activity. The query extracts executable names from raw Sysmon XML logs and displays process activity such as `svchost.exe`, `LocationNotificationWindows.exe`, and multiple Splunk Universal Forwarder processes running on the endpoint. This type of detection helps SOC analysts correlate authentication activity with process execution to identify suspicious behavior or possible brute-force and persistence activity on a system.
+
+
