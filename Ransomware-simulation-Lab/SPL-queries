@@ -1,1 +1,9 @@
+Detect Powershell Queries
+
+index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
+| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
+| search Image="*powershell.exe"
+| table _time Image CommandLine
+
 
