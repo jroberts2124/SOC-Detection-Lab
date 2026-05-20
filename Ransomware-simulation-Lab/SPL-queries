@@ -1,4 +1,4 @@
-Detect Powershell Queries
+Detect Powershell Activilty
 
 index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
@@ -7,3 +7,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | table _time Image CommandLine
 
 
+index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
+| search CommandLine="*vssadmin*" OR CommandLine="*delete shadows*"
+| table _time CommandLine
