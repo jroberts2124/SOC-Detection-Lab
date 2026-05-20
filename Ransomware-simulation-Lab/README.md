@@ -103,39 +103,6 @@ cmd.exe /c echo vssadmin delete shadows /all /quiet
 
 ---
 
-# Splunk Detection Queries
-
-## Detect PowerShell Activity
-
-```spl
-index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
-| rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
-| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
-| search Image="*powershell.exe"
-| table _time Image CommandLine
-```
-
----
-
-## Detect Suspicious Backup Deletion Commands
-
-```spl
-index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
-| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
-| search CommandLine="*vssadmin*" OR CommandLine="*delete shadows*"
-| table _time CommandLine
-```
-
----
-
-## Detect Ransom Note Activity
-
-```spl
-index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
-| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
-| search CommandLine="*READ_ME.txt*"
-| table _time CommandLine
-```
 
 ---
 
