@@ -106,44 +106,6 @@ Telemetry was forwarded to Splunk using Splunk Universal Forwarder.
 
 ---
 
-# Splunk Detection Queries
-
-## LOLBins Detection Query
-
-```spl
-index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
-| rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
-| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
-| search Image="*certutil.exe" OR Image="*bitsadmin.exe" OR Image="*rundll32.exe" OR Image="*regsvr32.exe" OR Image="*mshta.exe"
-| table _time Image CommandLine
-```
-
----
-
-## Advanced LOLBins Classification Query
-
-```spl
-index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
-| rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
-| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
-| search 
-    Image="*certutil.exe" OR 
-    Image="*bitsadmin.exe" OR 
-    Image="*rundll32.exe" OR 
-    Image="*regsvr32.exe" OR 
-    Image="*mshta.exe"
-| eval Technique=case(
-    like(Image,"%certutil.exe%"), "LOLBAS - certutil",
-    like(Image,"%bitsadmin.exe%"), "LOLBAS - bitsadmin",
-    like(Image,"%rundll32.exe%"), "LOLBAS - rundll32",
-    like(Image,"%regsvr32.exe%"), "LOLBAS - regsvr32",
-    like(Image,"%mshta.exe%"), "LOLBAS - mshta"
-)
-| table _time Technique Image CommandLine
-```
-
----
-
 # Detection Logic
 
 The detection strategy focused on identifying:
