@@ -8,6 +8,8 @@ command commonly used in ransomware attacks to delete Windows Volume Shadow Copi
 
 <img width="975" height="447" alt="image" src="https://github.com/user-attachments/assets/dce904b7-4d3e-4720-8b60-c15ec9d29a84" />
 
+Sysmon and Windows Security logs in Splunk Enterprise capturing a simulated ransomware-style PowerShell command that creates a fake ransom note (READ_ME.txt) using an execution policy bypass
+
 <img width="975" height="214" alt="image" src="https://github.com/user-attachments/assets/375148cc-cedd-43ba-a779-5038ff1fc1ca" />
 
 <img width="975" height="324" alt="image" src="https://github.com/user-attachments/assets/5d73975d-d9c9-4d2d-9fb5-89d959e838b6" />
