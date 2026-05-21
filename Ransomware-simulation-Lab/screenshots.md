@@ -14,7 +14,6 @@ Sysmon and Windows Security logs in Splunk Enterprise capturing a simulated rans
 
 Custom Splunk Enterprise query detecting the execution of the ransomware-related command vssadmin delete shadows /all /quiet, which attackers commonly use to delete Windows Volume Shadow Copies and prevent file recovery after encryption.
 
-<img width="975" height="324" alt="image" src="https://github.com/user-attachments/assets/5d73975d-d9c9-4d2d-9fb5-89d959e838b6" />
 
 <img width="975" height="305" alt="image" src="https://github.com/user-attachments/assets/ef5ab224-84bd-4630-963a-e3386ce21964" />
 
