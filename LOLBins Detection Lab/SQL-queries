@@ -1,0 +1,5 @@
+index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "Name=[\"']Image[\"']>(?<Image>[^<]+)"
+| rex field=_raw "Name=[\"']CommandLine[\"']>(?<CommandLine>[^<]+)"
+| search Image="*certutil.exe" OR Image="*bitsadmin.exe" OR Image="*rundll32.exe" OR Image="*regsvr32.exe" OR Image="*mshta.exe"
+| table _time Image CommandLine
