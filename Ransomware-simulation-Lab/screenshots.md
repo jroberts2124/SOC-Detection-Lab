@@ -17,6 +17,8 @@ Custom Splunk Enterprise query detecting the execution of the ransomware-related
 
 <img width="975" height="305" alt="image" src="https://github.com/user-attachments/assets/ef5ab224-84bd-4630-963a-e3386ce21964" />
 
+Splunk Enterprise query detecting PowerShell commands associated with a simulated ransomware attack by searching for the creation of a fake ransom note named READ_ME.txt. The results display PowerShell executions using -ExecutionPolicy Bypass to write the ransom note file into the C:\AtomicRansomLab directory, demonstrating how ransomware-style activity can be identified through Sysmon command-line logging.
+
 
 
 
