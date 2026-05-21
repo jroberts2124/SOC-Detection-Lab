@@ -4,6 +4,8 @@ screenshot shows a simulated ransomware attack lab where PowerShell commands cre
 
 <img width="975" height="105" alt="image" src="https://github.com/user-attachments/assets/1ce6644c-b69f-47f8-8848-733c775e3403" />
 
+command commonly used in ransomware attacks to delete Windows Volume Shadow Copies with vssadmin delete shadows /all /quiet, preventing victims from restoring files through system backups or previous versions.
+
 <img width="975" height="447" alt="image" src="https://github.com/user-attachments/assets/dce904b7-4d3e-4720-8b60-c15ec9d29a84" />
 
 <img width="975" height="214" alt="image" src="https://github.com/user-attachments/assets/375148cc-cedd-43ba-a779-5038ff1fc1ca" />
